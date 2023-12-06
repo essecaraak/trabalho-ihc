@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dadosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+route::get('/relatorioPeso', [dadosController::class, 'obterDadosPeso'])->name('relatorioPeso');
+
+Route::get('/exemple', function () {
+    return view('exemple');
 });
