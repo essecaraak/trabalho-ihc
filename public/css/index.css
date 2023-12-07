@@ -1,0 +1,115 @@
+.today-stats .title h4 {
+    text-transform: uppercase;
+}
+
+.value {
+    color: var(--azul);
+}
+
+.heart-header .icon, .heart-header .value {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.heart-header .value h1 {
+    margin-bottom: 0;
+}
+
+.heart-header .value p {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.heart-header .icon {
+    background-color: var(--turquesa-2);
+    width: fit-content;
+    height: fit-content;
+    padding: 30px;
+    border-radius: 200px;
+}
+
+.heart-header {
+    margin-bottom: 15%
+}
+
+.stats {
+    display: grid;
+    row-gap: 7px;
+}
+
+.stats-value {
+    padding: 6px 11px;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    column-gap: 5px;
+    align-items: center;
+    border-radius: 10px;
+    height: 46px;
+}
+
+.today-stats .title {
+    text-align: center;
+    border-bottom: 2px solid var(--vermelho-3);
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.today-stats .title h4 {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.stats-value .stats-text span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.stats-value.heart {
+    background-color: var(--vermelho-2);
+}
+
+.stats-value.heart .stats.icon {
+    row-gap: 1px;
+}
+
+.stats-value.heart .icon span {
+    font-size: 10px;
+}
+
+.stats-value.steps {
+    background-color: var(--amarelo-2);
+}
+
+.stats-value.calories {
+    background-color: var(--turquesa-2);
+}
+
+.stats-value.weight {
+    background-color: var(--azul-2);
+}
+
+.stats a {
+    text-decoration: none;
+    color: var(--preto);
+}
+
+.stats a:visited {
+    color: var(--preto);
+}
+
+.stats-value.heart:hover {
+    background-color: var(--vermelho);
+}
+
+.stats-value.steps:hover {
+    background-color: var(--amarelo);
+}
+
+.stats-value.calories:hover {
+    background-color: var(--turquesa);
+}
+
+.stats-value.weight:hover {
+    background-color: var(--azul);
+}

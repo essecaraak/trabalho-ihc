@@ -17,6 +17,8 @@
         var caloriesExpendedData = [];
         var weightData = [];
         var heartMinutesData = [];
+        var stepsCountData = [];
+
         function carregarDados(url) {
             $.ajax({
                 url: url,
@@ -31,7 +33,6 @@
             });
         }
 
-        var stepsCountData = [];
 
 
 function exibirDados(response) {

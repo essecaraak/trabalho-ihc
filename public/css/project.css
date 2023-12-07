@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&family=Rajdhani:wght@700&display=swap');
+
+:root {
+    --azul: #121F49;
+    --azul-2: #696E8E;
+    --turquesa: #6DC8B7;
+    --turquesa-2: #AADCD3;
+    --amarelo: #F9A11B;
+    --amarelo-2: #FEC47B;
+    --branco: #F4F4F4;
+    --branco-2: #E7E8EA;
+    --vermelho: #F24C27;
+    --vermelho-2: #F79963;
+    --vermelho-3: #f799633b;
+    --preto: #101010;
+
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 400;
+    color: var(--preto);
+
+    background-color: var(--branco);
+    padding: 32px 20px;
+}
+
+h1, h3 {
+    color: var(--azul);
+    font-weight: 700;
+}
+
+h2, h4 {
+    color: var(--vermelho);
+    font-weight: 700;
+}
