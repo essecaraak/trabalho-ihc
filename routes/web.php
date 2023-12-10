@@ -22,3 +22,6 @@ route::get('/relatorioPeso', [dadosController::class, 'obterDadosPeso'])->name('
 Route::get('/exemple', function () {
     return view('exemple');
 });
+Route::get('/historicoPontos', function () {
+    return view('historicoPontos');
+});

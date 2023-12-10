@@ -29,7 +29,7 @@
         </div>
 
         <div class="stats">
-            <a href="(HISTORICO DE CORACAO)" class="history heart">
+            <a href="/historicoPontos" class="history heart">
                 <div class="stats-value heart">
                     <div class="stats icon">
                         <svg width="32" height="35" viewBox="0 0 32 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -112,6 +112,7 @@
                     var timer = $('#updated');
                     updatetext = timetoupdate;
                     timer.html("os dados serão atualizados em " + timetoupdate + " segundos");
+                    console.log('dados:', data);
                     exibirDados(data);
                 },
                 error: function(error) {
@@ -212,12 +213,13 @@
             }
 
             if (Array.isArray(weightData) && weightData.length > 0) {
-                peso_spam.html("VOCÊ ESTÁ PESANDO" + weightData[weightData.length - 1].value + " QUILOS");
+                peso_spam.html("VOCÊ ESTÁ PESANDO " + weightData[weightData.length - 1].value + " QUILOS");
             } else {
                 peso_spam.html("NÃO FOI POSSÍVEL PEGAR SEU PESO NO GOOGLE FIT :(");
             }
-
-            console.log('Dados de steps_count:', stepsCountData[stepsCountData.length - 1].value);
+            
+            
+            console.log('Dados de calories',valuesArray);
             console.log('Dados de calories_expended:', caloriesExpendedData);
             console.log('Dados de weight:', weightData);
             console.log('Dados de heart_minutes:', heartMinutesData);
@@ -233,14 +235,14 @@
 
 
         
-        carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
+        //carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
         
         setInterval(() => {
             timer();
         }, 1000);
-        setInterval(function() {
+        /*setInterval(function() {
             carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
-        }, timetoupdate * 1000);
+        }, timetoupdate * 1000);*/
     </script>
 </body>
 
