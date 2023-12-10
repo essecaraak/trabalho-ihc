@@ -191,10 +191,10 @@
                 maximo.html("" + Math.max(...valuesArray));
                 minimo.html("" + Math.min(...valuesArray));
                 msg = document.getElementById("msg");
-                msg.style.display="block";
+                msg.style.display="none";
             } else {
                 msg = document.getElementById("msg");
-                msg.style.display="none";
+                msg.style.display="block";
                 media.html("0");
                 maximo.html("0");
                 minimo.html("0");

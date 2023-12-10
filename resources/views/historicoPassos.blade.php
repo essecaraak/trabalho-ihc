@@ -189,9 +189,11 @@
                 media.html("" + Math.trunc(sum / valuesArray.length));
                 maximo.html("" + Math.max(...valuesArray));
                 minimo.html("" + Math.min(...valuesArray));
-
+                msg = document.getElementById("msg");
+                msg.style.display = "none";
             } else {
-                msg.html("não foi possível coletar nenhuma informação da semana do seu google fit:(");
+                msg = document.getElementById("msg");
+                msg.style.display = "block";
                 media.html("0");
                 maximo.html("0");
                 minimo.html("0");
