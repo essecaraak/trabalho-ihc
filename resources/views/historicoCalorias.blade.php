@@ -21,7 +21,7 @@
 
     </div>
     <div class="value" style="text-align: center">
-        <h1 id="heart-now">Histórico de pontos</h1><br>
+        <h1 id="heart-now">Histórico de calorias gastas</h1><br>
     </div>
 
     <div class="today-stats">
@@ -162,15 +162,14 @@
             }
 
             // Agora você tem os dados armazenados nas variáveis stepsCountData, caloriesExpendedData, weightData e heartMinutesData
-            if (Array.isArray(heartMinutesData) && heartMinutesData.length > 0) {
-
-                valuesArray = heartMinutesData.map(function(entry) {
+            if (Array.isArray(caloriesExpendedData) && caloriesExpendedData.length > 0) {
+                valuesArray = caloriesExpendedData.map(function(entry) {
                     return entry.value;
                 });
-                datesArray = heartMinutesData.map(function(entry) {
+
+                datesArray = caloriesExpendedData.map(function(entry) {
                     return entry.endTime.slice(0, 11);
                 });
-
                 let sum = valuesArray.reduce(function(a, b) {
                     return a + b;
                 });
@@ -186,7 +185,8 @@
             }
 
 
-            console.log("dias: ", datesArray);
+
+
             console.log("values: ", valuesArray);
             console.log("values: ", datesArray);
             console.log('Dados de steps_count:', stepsCountData.value);
@@ -224,8 +224,6 @@
         /*setInterval(function() {
             carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
         }, timetoupdate * 1000);*/
-
-        //Matheus coloca os dados dos pontos aqui, cada elemento do array é um dia da semana
     </script>
 </body>
 

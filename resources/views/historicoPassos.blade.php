@@ -21,7 +21,7 @@
 
     </div>
     <div class="value" style="text-align: center">
-        <h1 id="heart-now">Histórico de pontos</h1><br>
+        <h1 id="heart-now">Histórico de passos</h1><br>
     </div>
 
     <div class="today-stats">
@@ -57,6 +57,7 @@
         var valuesArray = [0, 0, 0, 0, 0, 0, 0];
         var datesArray
 
+
         function carregarDados(url) {
             $.ajax({
                 url: url,
@@ -80,6 +81,7 @@
             var maximo = $("#maximo");
             var msg = $("#msg");
 
+
             function getUltimosSeteDias() {
                 var ultimosSeteDias = [];
 
@@ -99,7 +101,6 @@
                 return ultimosSeteDias;
             }
             var datesArray = getUltimosSeteDias();
-
             // Itera sobre cada tipo de dado (steps_count, calories_expended, weight, heart_minutes)
             for (var dataType in response) {
                 if (response.hasOwnProperty(dataType)) {
@@ -162,15 +163,14 @@
             }
 
             // Agora você tem os dados armazenados nas variáveis stepsCountData, caloriesExpendedData, weightData e heartMinutesData
-            if (Array.isArray(heartMinutesData) && heartMinutesData.length > 0) {
-
-                valuesArray = heartMinutesData.map(function(entry) {
+            if (Array.isArray(stepsCountData) && stepsCountData.length > 0) {
+                valuesArray = stepsCountData.map(function(entry) {
                     return entry.value;
                 });
-                datesArray = heartMinutesData.map(function(entry) {
+
+                datesArray = stepsCountData.map(function(entry) {
                     return entry.endTime.slice(0, 11);
                 });
-
                 let sum = valuesArray.reduce(function(a, b) {
                     return a + b;
                 });
@@ -186,7 +186,7 @@
             }
 
 
-            console.log("dias: ", datesArray);
+
             console.log("values: ", valuesArray);
             console.log("values: ", datesArray);
             console.log('Dados de steps_count:', stepsCountData.value);

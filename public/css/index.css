@@ -29,7 +29,8 @@
 }
 
 .heart-header {
-    margin-bottom: 15%
+    margin-bottom: 15%;
+    margin-top: 3%;
 }
 
 .stats {
@@ -112,4 +113,107 @@
 
 .stats-value.weight:hover {
     background-color: var(--azul);
+}
+
+
+
+
+ /* AQUI COMEÇA O BOTAO HELP e CREDITOS, ATÉ O UTLIMO */
+
+ .credits p {
+    text-align: center;
+    font-size: 12px;
+ }
+
+.credits a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.credits a:visited, credits a:link {
+  color: var(--turquesa);
+}
+
+.credits a:hover {
+  color: var(--turquesa-2);
+}
+
+.help {
+  width: 40px;
+  /* margin: auto; */
+  display: grid;
+  justify-items: center;
+  row-gap: 5px;
+}
+  
+.help .question {
+  height: 40px;
+  width: 40px;
+  background: var(--vermelho);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 43px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--azul);
+}
+
+.help .popup {
+  width: 20rem;
+  height: 0px;
+  text-align: left;
+  overflow: hidden;
+  /* position: relative; */
+  background: var(--branco-2);
+  opacity: 0;
+  transition: 1s;
+}
+
+.help .popup {
+  left: -260px;
+  top: 10px;
+}
+
+.help .popup2 {
+  height: 220px;
+}
+
+.help .popup2 h4 {
+  font-size: 18px;
+  padding: 10px;
+  margin: 0;
+}
+
+.help:hover .popup {
+  opacity: 1;
+  height: 270px;
+}
+
+.help .popup h3 {
+  margin: 0;
+  padding: 10px 0 0 10px;
+  height: 30px;
+  background: var(--vermelho);
+  color: var(--azul);
+  font-weight: 600;
+}
+
+.help .popup p {
+  font-size: 16px;
+  padding: 10px;
+  margin: 0;
+}
+
+.help .popup strong {
+  color: var(--vermelho);
+}
+
+.help .popup a {
+  text-decoration: none;
+  /* color: #317eac; */
+}
+
+.help .popup p em {
+  font-size: 12px;
 }

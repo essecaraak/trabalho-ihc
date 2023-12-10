@@ -25,3 +25,12 @@ Route::get('/exemple', function () {
 Route::get('/historicoPontos', function () {
     return view('historicoPontos');
 });
+Route::get('/historicoCalorias', function () {
+    return view('historicoCalorias');
+});
+Route::get('/historicoPassos', function () {
+    return view('historicoPassos');
+});
+Route::get('/historicoPeso', function () {
+    return view('historicoPeso');
+});

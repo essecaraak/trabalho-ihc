@@ -1,0 +1,40 @@
+/* .media {
+    color: var(--azul);
+}
+
+.minimo {
+    color: var(--amarelo);
+}
+
+.maximo {
+    color: var(--vermelho);
+} */
+
+.stats {
+    align-items: center;
+}
+
+.value {
+    text-align: center;
+}
+
+.graph-values{
+    padding: 6px 11px;
+    border-radius: 10px;
+    height: 30px;
+    align-items: center;
+    line-height: 30px;
+    background-color: var(--branco-2);
+}
+
+.graph-values.media {
+    background-color: var(--amarelo-2);
+}
+
+.graph-values.minimo {
+    background-color: var(--azul-2);
+}
+
+.graph-values.maximo {
+    background-color: var(--vermelho-2);
+}

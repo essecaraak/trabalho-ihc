@@ -21,7 +21,7 @@
 
     </div>
     <div class="value" style="text-align: center">
-        <h1 id="heart-now">Histórico de pontos</h1><br>
+        <h1 id="heart-now">Histórico de peso</h1><br>
     </div>
 
     <div class="today-stats">
@@ -162,15 +162,14 @@
             }
 
             // Agora você tem os dados armazenados nas variáveis stepsCountData, caloriesExpendedData, weightData e heartMinutesData
-            if (Array.isArray(heartMinutesData) && heartMinutesData.length > 0) {
-
-                valuesArray = heartMinutesData.map(function(entry) {
+            if (Array.isArray(weightData) && weightData.length > 0) {
+                valuesArray = weightData.map(function(entry) {
                     return entry.value;
                 });
-                datesArray = heartMinutesData.map(function(entry) {
+
+                datesArray = weightData.map(function(entry) {
                     return entry.endTime.slice(0, 11);
                 });
-
                 let sum = valuesArray.reduce(function(a, b) {
                     return a + b;
                 });
@@ -186,7 +185,7 @@
             }
 
 
-            console.log("dias: ", datesArray);
+
             console.log("values: ", valuesArray);
             console.log("values: ", datesArray);
             console.log('Dados de steps_count:', stepsCountData.value);

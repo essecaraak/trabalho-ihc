@@ -10,6 +10,18 @@
 </head>
 
 <body>
+    <!-- AQUI COMEÇA O BOTAO HELP -->
+    <div class="help">
+        <div class="question">?</div>
+        <div class="popup">
+            <h3>Como ver meu histórico?</h3>
+            <p>Aqui nesta página você está vendo seus dados coletados <strong>hoje</strong>, mas você pode ter acesso aos seus dados de até <strong>7 dias</strong> (seu histórico) tocando nos <strong>botões coloridos</strong> abaixo da sua pontuação mais recente.</p>
+
+            <p>Por exemplo, se você quiser ver seu histórico de <strong>passos</strong>, você precisa tocar no ícone que contabiliza <strong>seu número de passos hoje</strong>, o ícone amarelo.</p>
+            <p>Units are assessed by either an <strong>end of unit test</strong>, a <strong>final piece of work</strong> or by judging your <strong>overall progress</strong> in the unit.</p>
+        </div>
+    </div>
+    <!-- AQUI TERMINA O BOTAO HELP -->
     <div class="heart-header">
         <div class="icon">
             <svg width="160" height="160" viewBox="0 0 151 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +55,7 @@
                 </div>
             </a>
 
-            <a href="(HISTORICO DE PASSOS)" class="history steps">
+            <a href="/historicoPassos" class="history steps">
                 <div class="stats-value steps">
                     <div class="stats icon">
                         <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +77,7 @@
                 </div>
             </a>
 
-            <a href="(HISTORICO DE CALORIAS)" class="history calories">
+            <a href="/historicoCalorias" class="history calories">
                 <div class="stats-value calories">
                     <div class="stats icon">
                         <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +91,7 @@
                 </div>
             </a>
 
-            <a href="(HISTORICO DE PESO)" class="history">
+            <a href="/historicoPeso" class="history">
                 <div class="stats-value weight">
                     <div class="stats icon">
                         <svg width="32" height="34" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,6 +105,11 @@
             </a>
         </div>
     </div>
+    <!-- AQUI COMEÇA OS CREDITOS -->
+    <div class="credits">
+        <p>Ícones por <a href="https://www.svgrepo.com">SVG Repo</a></p>
+    </div>
+    <!-- AQUI TERMINA OS CREDITOS -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <script>
@@ -129,6 +146,7 @@
             var calorias_spam = $('#calorias_spam');
             var pontos_spam = $('#pontos_spam');
             var pontos_h1 = $('#heart-now');
+            var dia = new Date().toDateString().slice(8, 10);
 
 
             // Itera sobre cada tipo de dado (steps_count, calories_expended, weight, heart_minutes)
@@ -194,32 +212,50 @@
 
             // Agora você tem os dados armazenados nas variáveis stepsCountData, caloriesExpendedData, weightData e heartMinutesData
             if (Array.isArray(stepsCountData) && stepsCountData.length > 0) {
-                passos_spam.html("VOCÊ DEU " + stepsCountData[stepsCountData.length - 1].value + " PASSOS");
+                if (stepsCountData[stepsCountData.length - 1].endTime.slice(0, 2) == dia) {
+                    passos_spam.html("VOCÊ DEU " + stepsCountData[stepsCountData.length - 1].value + " PASSOS");
+                } else {
+                    passos_spam.html("VOCÊ DEU 0 PASSOS");
+                }
             } else {
                 peso_spam.html("NÃO FOI POSSÍVEL PEGAR SEUS PASSOS NO GOOGLE FIT :(");
             }
 
             if (Array.isArray(caloriesExpendedData) && caloriesExpendedData.length > 0) {
-                calorias_spam.html("VOCÊ QUEIMOU " + caloriesExpendedData[caloriesExpendedData.length - 1].value + " KCAL");
+                if (caloriesExpendedData[caloriesExpendedData.length - 1].endTime.slice(0, 2) == dia) {
+                    calorias_spam.html("VOCÊ QUEIMOU " + caloriesExpendedData[caloriesExpendedData.length - 1].value + " KCAL");
+                } else {
+                    calorias_spam.html("VOCÊ QUEIMOU 0 KCAL");
+                }
             } else {
-                peso_spam.html("NÃO FOI POSSÍVEL PEGAR SUAS CALORIAS GASTAS NO GOOGLE FIT :(");
+                calorias_spam.html("NÃO FOI POSSÍVEL PEGAR SUAS CALORIAS GASTAS NO GOOGLE FIT :(");
             }
 
             if (Array.isArray(heartMinutesData) && heartMinutesData.length > 0) {
-                pontos_spam.html(heartMinutesData[heartMinutesData.length - 1].value + " PONTOS DE CORAÇÃO");
-                pontos_h1.html(heartMinutesData[heartMinutesData.length - 1].value + " PONTOS");
+                if (heartMinutesData[heartMinutesData.length - 1].endTime.slice(0, 2) == dia) {
+                    pontos_spam.html(heartMinutesData[heartMinutesData.length - 1].value + " PONTOS DE CORAÇÃO");
+                    pontos_h1.html(heartMinutesData[heartMinutesData.length - 1].value + " PONTOS");
+                } else {
+                    pontos_spam.html("0 PONTOS DE CORAÇÃO");
+                    pontos_h1.html("0 PONTOS");
+                }
             } else {
-                peso_spam.html("NÃO FOI POSSÍVEL PEGAR SEUS PONTOS DE CORAÇÃO NO GOOGLE FIT :(");
+                pontos_spam.html("0 PONTOS DE CORAÇÃO");
+                pontos_h1.html("0 PONTOS");
             }
 
             if (Array.isArray(weightData) && weightData.length > 0) {
-                peso_spam.html("VOCÊ ESTÁ PESANDO " + weightData[weightData.length - 1].value + " QUILOS");
+                if (weightData[weightData.length - 1].endTime.slice(0, 2) == dia) {
+                    peso_spam.html("VOCÊ ESTÁ PESANDO " + weightData[weightData.length - 1].value + " QUILOS");
+                } else {
+                    peso_spam.html("NÃO FOI POSSÍVEL PEGAR SEU PESO DE HOJE NO GOOGLE FIT :(");
+                }
             } else {
                 peso_spam.html("NÃO FOI POSSÍVEL PEGAR SEU PESO NO GOOGLE FIT :(");
             }
-            
-            
-            console.log('Dados de calories',valuesArray);
+
+
+            console.log('DIA', caloriesExpendedData[caloriesExpendedData.length - 1].endTime.slice(0, 2));
             console.log('Dados de calories_expended:', caloriesExpendedData);
             console.log('Dados de weight:', weightData);
             console.log('Dados de heart_minutes:', heartMinutesData);
@@ -228,15 +264,12 @@
 
         function timer() {
             var timer = $('#updated');
-                updatetext = updatetext - 1;
-                timer.html("os dados serão atualizados em " + updatetext + " segundos");
+            updatetext = updatetext - 1;
+            timer.html("os dados serão atualizados em " + updatetext + " segundos");
         }
 
-
-
-        
-        //carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
-        
+        carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
+        //carregarDados("https://v1.nocodeapi.com/sarahborrete/fit/ZIVgzQrPvqEihqek/aggregatesDatasets?dataTypeName=weight,steps_count,calories_expended,heart_minutes&timePeriod=today");
         setInterval(() => {
             timer();
         }, 1000);
