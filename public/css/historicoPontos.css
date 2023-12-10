@@ -1,4 +1,4 @@
-/* .media {
+ .media {
     color: var(--azul);
 }
 
@@ -8,7 +8,7 @@
 
 .maximo {
     color: var(--vermelho);
-} */
+} 
 
 .stats {
     align-items: center;

@@ -20,6 +20,18 @@
             </svg></a>
 
     </div>
+    <div class="no-information" id="msg">
+        <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#F9A11B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+        </div>
+        <div class="text">
+            <span><strong>Não há dados para mostrar.</strong></span>
+        </div>
+    </div>
     <div class="value" style="text-align: center">
         <h1 id="heart-now">Histórico de passos</h1><br>
     </div>
@@ -219,8 +231,8 @@
 
         }
 
-        carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
-        //carregarDados("https://v1.nocodeapi.com/sarahborrete/fit/ZIVgzQrPvqEihqek/aggregatesDatasets?dataTypeName=weight,steps_count,calories_expended,heart_minutes&timePeriod=today");
+        //carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
+        carregarDados("https://v1.nocodeapi.com/sarahborrete/fit/ZIVgzQrPvqEihqek/aggregatesDatasets?dataTypeName=weight,steps_count,calories_expended,heart_minutes&timePeriod=today");
         /*setInterval(function() {
             carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
         }, timetoupdate * 1000);*/
