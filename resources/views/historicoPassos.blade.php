@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/project.css">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/historicoPontos.css">
+    <link rel="stylesheet" type="text/css" href="/css/project.css">
+    <link rel="stylesheet" type="text/css" href="/css/historicoPontos.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <title>Histórico de pontos</title>
@@ -41,18 +40,12 @@
             <h4>Última semana</h4><br>
         </div>
 
-        <div class="stats" style="align-items: center">
+        <div class="stats">
             <canvas id="myChart"></canvas><br>
             <div>
-                <b>
-                    <p style="color: #121F49">Média da semana: <span id="media">X</span></p>
-                </b>
-                <b>
-                    <p style="color: #F9A11B;">Menor valor da semana: <span id="minimo">X</span></p>
-                </b>
-                <b>
-                    <p style="color: #F24C27">Maior valor da semana: <span id="maximo">X</span></p>
-                </b>
+                <b><p class="media graph-values">Média da semana: <span id="media">X</span></p></b>
+                <b><p class="minimo graph-values">Menor valor da semana: <span id="minimo">X</span></p></b>
+                <b><p class="maximo graph-values">Maior valor da semana: <span id="maximo">X</span></p></b>
             </div>
         </div>
     </div>
@@ -233,11 +226,11 @@
 
         }
 
-        //carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
-        carregarDados("https://v1.nocodeapi.com/sarahborrete/fit/ZIVgzQrPvqEihqek/aggregatesDatasets?dataTypeName=weight,steps_count,calories_expended,heart_minutes&timePeriod=today");
-        /*setInterval(function() {
+        carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
+        //carregarDados("https://v1.nocodeapi.com/sarahborrete/fit/ZIVgzQrPvqEihqek/aggregatesDatasets?dataTypeName=weight,steps_count,calories_expended,heart_minutes&timePeriod=today");
+        setInterval(function() {
             carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
-        }, timetoupdate * 1000);*/
+        }, timetoupdate * 1000);
 
         //Matheus coloca os dados dos pontos aqui, cada elemento do array é um dia da semana
     </script>

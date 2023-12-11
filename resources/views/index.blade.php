@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/project.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
     <title>Homepage</title>
 </head>
 
@@ -218,7 +218,7 @@
                     passos_spam.html("VOCÊ DEU 0 PASSOS");
                 }
             } else {
-                peso_spam.html("NÃO FOI POSSÍVEL PEGAR SEUS PASSOS NO GOOGLE FIT :(");
+                passos_spam.html("NÃO FOI POSSÍVEL PEGAR SEUS PASSOS NO GOOGLE FIT :(");
             }
 
             if (Array.isArray(caloriesExpendedData) && caloriesExpendedData.length > 0) {
@@ -267,15 +267,16 @@
             updatetext = updatetext - 1;
             timer.html("os dados serão atualizados em " + updatetext + " segundos");
         }
+        //carregarDados("https://v1.nocodeapi.com/gevu/fit/PnCBDzghLotlxAhz/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
 
         carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
         //carregarDados("https://v1.nocodeapi.com/sarahborrete/fit/ZIVgzQrPvqEihqek/aggregatesDatasets?dataTypeName=weight,steps_count,calories_expended,heart_minutes&timePeriod=today");
         setInterval(() => {
             timer();
         }, 1000);
-        /*setInterval(function() {
+        setInterval(function() {
             carregarDados("https://v1.nocodeapi.com/gabrielprisco/fit/fLzdQAHmJTPhNYui/aggregatesDatasets?dataTypeName=steps_count,calories_expended,weight,heart_minutes&timePeriod=7days");
-        }, timetoupdate * 1000);*/
+        }, timetoupdate * 1000);
     </script>
 </body>
 

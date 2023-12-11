@@ -1,15 +1,3 @@
- .media {
-    color: var(--azul);
-}
-
-.minimo {
-    color: var(--amarelo);
-}
-
-.maximo {
-    color: var(--vermelho);
-} 
-
 .stats {
     align-items: center;
 }
@@ -37,4 +25,8 @@
 
 .graph-values.maximo {
     background-color: var(--vermelho-2);
+}
+
+.no-information {
+    text-align: center;
 }
